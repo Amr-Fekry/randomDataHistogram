@@ -24,16 +24,3 @@ for index, n in enumerate(count_list):
 		print "     {} | {}".format(index, "*"*n) # FEATURE: string * integer
 	else: # special case to fix number 10 indentation
 		print "    {} | {}".format(index, "*"*n)
-
-"""
-# another solution using a while loop:
-
-print "number | occurance"
-index = 0
-while index < len(count_list):
-    if index == 10: ## special case to fix number 10 indentation
-        print " "*4 + str(index) + " | " + "*"*count_list[index]
-    else:     
-        print " "*5 + str(index) + " | " + "*"*count_list[index]
-    index += 1
-"""
