@@ -21,9 +21,9 @@ for n in random_list:
 print "number | occurence"
 for index, n in enumerate(count_list):
 	if index != 10: 
-		print "     {} | {}".format(index, n)
+		print "     {} | {}".format(index, "*"*n) # FEATURE: string * integer
 	else: # special case to fix number 10 indentation
-		print "    {} | {}".format(index, n)
+		print "    {} | {}".format(index, "*"*n)
 
 """
 # another solution using a while loop:
@@ -32,19 +32,8 @@ print "number | occurance"
 index = 0
 while index < len(count_list):
     if index == 10: ## special case to fix number 10 indentation
-        print " "*4 + str(index) + " | " + str(count_list[index])  ## FEATURE: string * integer
+        print " "*4 + str(index) + " | " + "*"*count_list[index]
     else:     
-        print " "*5 + str(index) + " | " + str(count_list[index])
+        print " "*5 + str(index) + " | " + "*"*count_list[index]
     index += 1
-
-# lesson solutoin:
-
-print "number | occurrence"
-index = 0
-num_len = len("number")
-
-while index < len(count_list):
-  num_spaces = num_len - len(str(index))
-  print " " * num_spaces + str(index) + " | " + str(count_list[index])
-  index = index + 1
 """
