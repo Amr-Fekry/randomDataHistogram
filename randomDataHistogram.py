@@ -13,21 +13,38 @@ while count < list_length:
 # initialize a count_list to 11 zeros
 count_list = [0] * 11
 
-# for each number in random_list: increment element at index = number
+# for each number in random_list: increment element in count_list at index = number
 for n in random_list:
 	count_list[n] += 1
 
-"""
-# same solution using while loop:
+# summarize data of count_list in a table
+print "number | occurence"
+for index, n in enumerate(count_list):
+	if index != 10: 
+		print "     {} | {}".format(index, n)
+	else: # special case to fix number 10 indentation
+		print "    {} | {}".format(index, n)
 
+"""
+# another solution using a while loop:
+
+print "number | occurance"
 index = 0
-while index < list_length:
-  n = random_list[index]
-  count_list[n] += 1
-  index += 1
-"""
+while index < len(count_list):
+    if index == 10: ## special case to fix number 10 indentation
+        print " "*4 + str(index) + " | " + str(count_list[index])  ## FEATURE: string * integer
+    else:     
+        print " "*5 + str(index) + " | " + str(count_list[index])
+    index += 1
 
-print random_list
-print count_list
-# sum of all numbers in count_list should be 20 if code is right
-print sum(count_list)
+# lesson solutoin:
+
+print "number | occurrence"
+index = 0
+num_len = len("number")
+
+while index < len(count_list):
+  num_spaces = num_len - len(str(index))
+  print " " * num_spaces + str(index) + " | " + str(count_list[index])
+  index = index + 1
+"""
